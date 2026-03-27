@@ -1,3 +1,0 @@
-# Game World Marketplace
-
-Initializing...
