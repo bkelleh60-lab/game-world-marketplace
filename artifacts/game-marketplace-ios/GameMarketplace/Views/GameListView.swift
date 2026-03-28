@@ -63,13 +63,16 @@ struct GameListView: View {
         ScrollView {
             LazyVGrid(columns: adaptiveColumns, spacing: 20) {
                 ForEach(filteredGames) { game in
-                    NavigationLink(destination: GameDetailView(game: game)) {
+                    NavigationLink(value: game) {
                         GameCardView(game: game)
                     }
                     .buttonStyle(.plain)
                 }
             }
             .padding()
+        }
+        .navigationDestination(for: Game.self) { game in
+            GameDetailView(game: game)
         }
     }
 
