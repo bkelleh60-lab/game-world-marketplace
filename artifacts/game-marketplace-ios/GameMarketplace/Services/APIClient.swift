@@ -69,7 +69,7 @@ actor APIClient {
         }
 
         encoder = JSONEncoder()
-        encoder.keyEncodingStrategy = .convertToSnakeCase
+        // API expects camelCase keys (sellerName, coverImageUrl, etc.) — no key conversion
         encoder.dateEncodingStrategy = .iso8601
     }
 
